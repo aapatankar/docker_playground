@@ -14,11 +14,31 @@ services:
       - ./mysql-logs:/var/log/mysql
     restart: unless-stopped
     networks:
-      - mysql-network
+      - database-network
+
+  postgres:
+    image: postgres:15
+    container_name: postgres-container
+    environment:
+      - POSTGRES_DB=myapp
+      - POSTGRES_USER=appuser
+      - POSTGRES_PASSWORD=apppassword
+      - POSTGRES_ROOT_PASSWORD=rootpassword
+      - PGUSER=appuser
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./postgres-logs:/var/log/postgresql
+      - ./init-postgres.sql:/docker-entrypoint-initdb.d/init-postgres.sql
+    restart: unless-stopped
+    networks:
+      - database-network
 
 volumes:
   mysql_data:
+  postgres_data:
 
 networks:
-  mysql-network:
+  database-network:
     driver: bridge
