@@ -190,8 +190,8 @@ SELECT * FROM user_post_summary;
 For easy database management, you can use:
 
 ### DBeaver (Cross-platform)
-- **MySQL**: See [infrastructure/DBEAVER_CONNECTION.md](./infrastructure/DBEAVER_CONNECTION.md) for detailed setup
-- **PostgreSQL**: See [infrastructure/POSTGRES_CONNECTION.md](./infrastructure/POSTGRES_CONNECTION.md) for detailed setup
+- **MySQL**: See [infrastructure/data_sources/DBEAVER_CONNECTION.md](./infrastructure/data_sources/DBEAVER_CONNECTION.md) for detailed setup
+- **PostgreSQL**: See [infrastructure/data_sinks/POSTGRES_CONNECTION.md](./infrastructure/data_sinks/POSTGRES_CONNECTION.md) for detailed setup
 
 ### Other Recommended Tools
 - **pgAdmin** (PostgreSQL): Web-based administration tool
@@ -282,13 +282,20 @@ Get-NetTCPConnection | Where-Object {$_.LocalPort -eq 3307 -or $_.LocalPort -eq 
 docker_playground/
 ├── infrastructure/                 # All infrastructure files
 │   ├── docker-compose.yml         # Multi-service container orchestration
-│   ├── Dockerfile                 # MySQL container configuration
-│   ├── Dockerfile.dbt             # dbt container configuration
-│   ├── init-postgres.sql          # PostgreSQL initialization script
-│   ├── DBEAVER_CONNECTION.md      # MySQL DBeaver setup guide
-│   ├── POSTGRES_CONNECTION.md     # PostgreSQL connection guide
-│   └── DBT_SETUP.md              # dbt setup and usage guide
-├── dbt_project/                   # dbt project directory (standalone)
+│   ├── README.md                 # Infrastructure overview
+│   ├── data_sources/             # Data source configurations
+│   │   ├── Dockerfile            # MySQL container configuration
+│   │   ├── DBEAVER_CONNECTION.md # MySQL DBeaver setup guide
+│   │   └── README.md             # Data sources documentation
+│   ├── data_sinks/               # Data sink configurations
+│   │   ├── init-postgres.sql     # PostgreSQL initialization script
+│   │   ├── POSTGRES_CONNECTION.md # PostgreSQL connection guide
+│   │   └── README.md             # Data sinks documentation
+│   └── dbt/                      # dbt (Data Build Tool) configurations
+│       ├── Dockerfile.dbt        # dbt container configuration
+│       ├── DBT_SETUP.md          # dbt setup and usage guide
+│       └── README.md             # dbt documentation
+├── data_transformations/          # dbt project directory (data transformation layer)
 │   ├── dbt_project.yml           # dbt project configuration
 │   ├── profiles.yml              # dbt connection profiles
 │   ├── models/                   # dbt models

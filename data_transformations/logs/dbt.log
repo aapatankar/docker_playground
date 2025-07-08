@@ -3499,3 +3499,1017 @@ having count(*) > 1
 [0m04:32:40.349089 [info ] [MainThread]: Done. PASS=11 WARN=0 ERROR=0 SKIP=0 TOTAL=11
 [0m04:32:40.377070 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e5fa89bb310>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e5fa89c4a90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e5fa89d3a90>]}
 [0m04:32:40.391154 [debug] [MainThread]: Flushing usage events
+[0m13:00:18.914253 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d12d3de6990>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d12d3a76e10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d12d3ab52d0>]}
+
+
+============================== 13:00:18.929229 | a3257a86-afac-4898-9175-8b0abd5b82c6 ==============================
+[0m13:00:18.929229 [info ] [MainThread]: Running with dbt=1.7.4
+[0m13:00:18.931221 [debug] [MainThread]: running dbt with arguments {'invocation_command': 'dbt run --target-path /tmp/dbt_target', 'profiles_dir': '/dbt/profiles', 'target_path': '/tmp/dbt_target', 'introspect': 'True', 'write_json': 'True', 'use_experimental_parser': 'False', 'use_colors': 'True', 'debug': 'False', 'warn_error': 'None', 'log_format': 'default', 'static_parser': 'True', 'fail_fast': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'no_print': 'None', 'log_path': '/dbt/project/logs', 'indirect_selection': 'eager', 'send_anonymous_usage_stats': 'True', 'partial_parse': 'True', 'printer_width': '80', 'log_cache_events': 'False', 'quiet': 'False', 'version_check': 'True', 'cache_selected_only': 'False'}
+[0m13:00:19.222259 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'a3257a86-afac-4898-9175-8b0abd5b82c6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d12d3e09c50>]}
+[0m13:00:19.314480 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'a3257a86-afac-4898-9175-8b0abd5b82c6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d12d3b45090>]}
+[0m13:00:19.316769 [info ] [MainThread]: Registered adapter: postgres=1.7.4
+[0m13:00:19.337984 [debug] [MainThread]: checksum: 248e8aba381ba2d577dce7ab50d2010c2aac45d2b27e6e6214cdd96d2d41fabc, vars: {}, profile: , target: , version: 1.7.4
+[0m13:00:19.345108 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m13:00:19.346878 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'a3257a86-afac-4898-9175-8b0abd5b82c6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d12d2d11690>]}
+[0m13:00:21.029580 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'a3257a86-afac-4898-9175-8b0abd5b82c6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d12d21eed90>]}
+[0m13:00:21.045977 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'a3257a86-afac-4898-9175-8b0abd5b82c6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d12d1d2ccd0>]}
+[0m13:00:21.047097 [info ] [MainThread]: Found 3 models, 11 tests, 2 sources, 0 exposures, 0 metrics, 401 macros, 0 groups, 0 semantic models
+[0m13:00:21.048281 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'a3257a86-afac-4898-9175-8b0abd5b82c6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d12d2dd05d0>]}
+[0m13:00:21.052516 [info ] [MainThread]: 
+[0m13:00:21.055639 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m13:00:21.058406 [debug] [ThreadPool]: Acquiring new postgres connection 'list_myapp'
+[0m13:00:21.071531 [debug] [ThreadPool]: Using postgres connection "list_myapp"
+[0m13:00:21.073053 [debug] [ThreadPool]: On list_myapp: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "default", "target_name": "dev", "connection_name": "list_myapp"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m13:00:21.076360 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m13:00:21.172829 [debug] [ThreadPool]: SQL status: SELECT 4 in 0.0 seconds
+[0m13:00:21.175592 [debug] [ThreadPool]: On list_myapp: Close
+[0m13:00:21.178926 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_myapp, now list_myapp_public)
+[0m13:00:21.186122 [debug] [ThreadPool]: Using postgres connection "list_myapp_public"
+[0m13:00:21.187126 [debug] [ThreadPool]: On list_myapp_public: BEGIN
+[0m13:00:21.188098 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m13:00:21.199244 [debug] [ThreadPool]: SQL status: BEGIN in 0.0 seconds
+[0m13:00:21.200963 [debug] [ThreadPool]: Using postgres connection "list_myapp_public"
+[0m13:00:21.202434 [debug] [ThreadPool]: On list_myapp_public: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "default", "target_name": "dev", "connection_name": "list_myapp_public"} */
+select
+      'myapp' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public'
+    union all
+    select
+      'myapp' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public'
+    union all
+    select
+      'myapp' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'public'
+  
+[0m13:00:21.223174 [debug] [ThreadPool]: SQL status: SELECT 5 in 0.0 seconds
+[0m13:00:21.225687 [debug] [ThreadPool]: On list_myapp_public: ROLLBACK
+[0m13:00:21.227268 [debug] [ThreadPool]: On list_myapp_public: Close
+[0m13:00:21.235113 [debug] [MainThread]: Using postgres connection "master"
+[0m13:00:21.236350 [debug] [MainThread]: On master: BEGIN
+[0m13:00:21.237370 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m13:00:21.247383 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m13:00:21.248671 [debug] [MainThread]: Using postgres connection "master"
+[0m13:00:21.250008 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "default", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v', 'm')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m13:00:21.264754 [debug] [MainThread]: SQL status: SELECT 2 in 0.0 seconds
+[0m13:00:21.267281 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'a3257a86-afac-4898-9175-8b0abd5b82c6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d12d25ed210>]}
+[0m13:00:21.268518 [debug] [MainThread]: On master: ROLLBACK
+[0m13:00:21.269937 [debug] [MainThread]: Using postgres connection "master"
+[0m13:00:21.271159 [debug] [MainThread]: On master: BEGIN
+[0m13:00:21.273426 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m13:00:21.274634 [debug] [MainThread]: On master: COMMIT
+[0m13:00:21.275668 [debug] [MainThread]: Using postgres connection "master"
+[0m13:00:21.276692 [debug] [MainThread]: On master: COMMIT
+[0m13:00:21.278011 [debug] [MainThread]: SQL status: COMMIT in 0.0 seconds
+[0m13:00:21.279151 [debug] [MainThread]: On master: Close
+[0m13:00:21.280715 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m13:00:21.282354 [info ] [MainThread]: 
+[0m13:00:21.299645 [debug] [Thread-1 (]: Began running node model.postgres_analytics.stg_posts
+[0m13:00:21.300186 [debug] [Thread-2 (]: Began running node model.postgres_analytics.stg_users
+[0m13:00:21.301441 [info ] [Thread-1 (]: 1 of 3 START sql view model public.stg_posts ................................... [RUN]
+[0m13:00:21.303188 [info ] [Thread-2 (]: 2 of 3 START sql view model public.stg_users ................................... [RUN]
+[0m13:00:21.307187 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_myapp_public, now model.postgres_analytics.stg_posts)
+[0m13:00:21.309225 [debug] [Thread-2 (]: Acquiring new postgres connection 'model.postgres_analytics.stg_users'
+[0m13:00:21.310771 [debug] [Thread-1 (]: Began compiling node model.postgres_analytics.stg_posts
+[0m13:00:21.312187 [debug] [Thread-2 (]: Began compiling node model.postgres_analytics.stg_users
+[0m13:00:21.321503 [debug] [Thread-1 (]: Writing injected SQL for node "model.postgres_analytics.stg_posts"
+[0m13:00:21.325800 [debug] [Thread-2 (]: Writing injected SQL for node "model.postgres_analytics.stg_users"
+[0m13:00:21.330322 [debug] [Thread-2 (]: Timing info for model.postgres_analytics.stg_users (compile): 13:00:21.322512 => 13:00:21.330099
+[0m13:00:21.330902 [debug] [Thread-1 (]: Timing info for model.postgres_analytics.stg_posts (compile): 13:00:21.313881 => 13:00:21.330602
+[0m13:00:21.331863 [debug] [Thread-2 (]: Began executing node model.postgres_analytics.stg_users
+[0m13:00:21.333179 [debug] [Thread-1 (]: Began executing node model.postgres_analytics.stg_posts
+[0m13:00:21.434947 [debug] [Thread-1 (]: Writing runtime sql for node "model.postgres_analytics.stg_posts"
+[0m13:00:21.438624 [debug] [Thread-2 (]: Writing runtime sql for node "model.postgres_analytics.stg_users"
+[0m13:00:21.443381 [debug] [Thread-1 (]: Using postgres connection "model.postgres_analytics.stg_posts"
+[0m13:00:21.444021 [debug] [Thread-2 (]: Using postgres connection "model.postgres_analytics.stg_users"
+[0m13:00:21.445213 [debug] [Thread-1 (]: On model.postgres_analytics.stg_posts: BEGIN
+[0m13:00:21.446741 [debug] [Thread-2 (]: On model.postgres_analytics.stg_users: BEGIN
+[0m13:00:21.448191 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m13:00:21.450561 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m13:00:21.463161 [debug] [Thread-1 (]: SQL status: BEGIN in 0.0 seconds
+[0m13:00:21.463715 [debug] [Thread-2 (]: SQL status: BEGIN in 0.0 seconds
+[0m13:00:21.464810 [debug] [Thread-1 (]: Using postgres connection "model.postgres_analytics.stg_posts"
+[0m13:00:21.466389 [debug] [Thread-2 (]: Using postgres connection "model.postgres_analytics.stg_users"
+[0m13:00:21.467794 [debug] [Thread-1 (]: On model.postgres_analytics.stg_posts: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "default", "target_name": "dev", "node_id": "model.postgres_analytics.stg_posts"} */
+
+  create view "myapp"."public"."stg_posts__dbt_tmp"
+    
+    
+  as (
+    -- models/staging/stg_posts.sql
+
+
+select
+    id as post_id,
+    user_id,
+    title,
+    content,
+    created_at,
+    updated_at
+from "myapp"."public"."posts"
+  );
+[0m13:00:21.469278 [debug] [Thread-2 (]: On model.postgres_analytics.stg_users: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "default", "target_name": "dev", "node_id": "model.postgres_analytics.stg_users"} */
+
+  create view "myapp"."public"."stg_users__dbt_tmp"
+    
+    
+  as (
+    -- models/staging/stg_users.sql
+
+
+select
+    id as user_id,
+    username,
+    email,
+    created_at,
+    updated_at
+from "myapp"."public"."users"
+  );
+[0m13:00:21.488102 [debug] [Thread-2 (]: SQL status: CREATE VIEW in 0.0 seconds
+[0m13:00:21.488764 [debug] [Thread-1 (]: SQL status: CREATE VIEW in 0.0 seconds
+[0m13:00:21.496177 [debug] [Thread-2 (]: Using postgres connection "model.postgres_analytics.stg_users"
+[0m13:00:21.499606 [debug] [Thread-1 (]: Using postgres connection "model.postgres_analytics.stg_posts"
+[0m13:00:21.500996 [debug] [Thread-2 (]: On model.postgres_analytics.stg_users: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "default", "target_name": "dev", "node_id": "model.postgres_analytics.stg_users"} */
+alter table "myapp"."public"."stg_users" rename to "stg_users__dbt_backup"
+[0m13:00:21.502344 [debug] [Thread-1 (]: On model.postgres_analytics.stg_posts: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "default", "target_name": "dev", "node_id": "model.postgres_analytics.stg_posts"} */
+alter table "myapp"."public"."stg_posts" rename to "stg_posts__dbt_backup"
+[0m13:00:21.506206 [debug] [Thread-2 (]: SQL status: ALTER TABLE in 0.0 seconds
+[0m13:00:21.506604 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.0 seconds
+[0m13:00:21.509664 [debug] [Thread-2 (]: Using postgres connection "model.postgres_analytics.stg_users"
+[0m13:00:21.514425 [debug] [Thread-1 (]: Using postgres connection "model.postgres_analytics.stg_posts"
+[0m13:00:21.515752 [debug] [Thread-2 (]: On model.postgres_analytics.stg_users: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "default", "target_name": "dev", "node_id": "model.postgres_analytics.stg_users"} */
+alter table "myapp"."public"."stg_users__dbt_tmp" rename to "stg_users"
+[0m13:00:21.517088 [debug] [Thread-1 (]: On model.postgres_analytics.stg_posts: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "default", "target_name": "dev", "node_id": "model.postgres_analytics.stg_posts"} */
+alter table "myapp"."public"."stg_posts__dbt_tmp" rename to "stg_posts"
+[0m13:00:21.518812 [debug] [Thread-2 (]: SQL status: ALTER TABLE in 0.0 seconds
+[0m13:00:21.520276 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.0 seconds
+[0m13:00:21.536384 [debug] [Thread-2 (]: On model.postgres_analytics.stg_users: COMMIT
+[0m13:00:21.538405 [debug] [Thread-1 (]: On model.postgres_analytics.stg_posts: COMMIT
+[0m13:00:21.539674 [debug] [Thread-2 (]: Using postgres connection "model.postgres_analytics.stg_users"
+[0m13:00:21.540937 [debug] [Thread-1 (]: Using postgres connection "model.postgres_analytics.stg_posts"
+[0m13:00:21.543691 [debug] [Thread-2 (]: On model.postgres_analytics.stg_users: COMMIT
+[0m13:00:21.544967 [debug] [Thread-1 (]: On model.postgres_analytics.stg_posts: COMMIT
+[0m13:00:21.551411 [debug] [Thread-2 (]: SQL status: COMMIT in 0.0 seconds
+[0m13:00:21.558207 [debug] [Thread-2 (]: Applying DROP to: "myapp"."public"."stg_users__dbt_backup"
+[0m13:00:21.558606 [debug] [Thread-1 (]: SQL status: COMMIT in 0.0 seconds
+[0m13:00:21.566513 [debug] [Thread-2 (]: Using postgres connection "model.postgres_analytics.stg_users"
+[0m13:00:21.569097 [debug] [Thread-1 (]: Applying DROP to: "myapp"."public"."stg_posts__dbt_backup"
+[0m13:00:21.570360 [debug] [Thread-2 (]: On model.postgres_analytics.stg_users: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "default", "target_name": "dev", "node_id": "model.postgres_analytics.stg_users"} */
+drop view if exists "myapp"."public"."stg_users__dbt_backup" cascade
+[0m13:00:21.571875 [debug] [Thread-1 (]: Using postgres connection "model.postgres_analytics.stg_posts"
+[0m13:00:21.575047 [debug] [Thread-1 (]: On model.postgres_analytics.stg_posts: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "default", "target_name": "dev", "node_id": "model.postgres_analytics.stg_posts"} */
+drop view if exists "myapp"."public"."stg_posts__dbt_backup" cascade
+[0m13:00:21.582229 [debug] [Thread-1 (]: SQL status: DROP VIEW in 0.0 seconds
+[0m13:00:21.584289 [debug] [Thread-1 (]: Timing info for model.postgres_analytics.stg_posts (execute): 13:00:21.398428 => 13:00:21.584094
+[0m13:00:21.585049 [debug] [Thread-2 (]: SQL status: DROP VIEW in 0.0 seconds
+[0m13:00:21.585875 [debug] [Thread-1 (]: On model.postgres_analytics.stg_posts: Close
+[0m13:00:21.587953 [debug] [Thread-2 (]: Timing info for model.postgres_analytics.stg_users (execute): 13:00:21.354468 => 13:00:21.587778
+[0m13:00:21.589586 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'a3257a86-afac-4898-9175-8b0abd5b82c6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d12d1d44150>]}
+[0m13:00:21.590792 [debug] [Thread-2 (]: On model.postgres_analytics.stg_users: Close
+[0m13:00:21.592190 [info ] [Thread-1 (]: 1 of 3 OK created sql view model public.stg_posts .............................. [[32mCREATE VIEW[0m in 0.28s]
+[0m13:00:21.594838 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'a3257a86-afac-4898-9175-8b0abd5b82c6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d12d25ee290>]}
+[0m13:00:21.596847 [debug] [Thread-1 (]: Finished running node model.postgres_analytics.stg_posts
+[0m13:00:21.598770 [info ] [Thread-2 (]: 2 of 3 OK created sql view model public.stg_users .............................. [[32mCREATE VIEW[0m in 0.29s]
+[0m13:00:21.602578 [debug] [Thread-2 (]: Finished running node model.postgres_analytics.stg_users
+[0m13:00:21.606826 [debug] [Thread-4 (]: Began running node model.postgres_analytics.user_post_summary
+[0m13:00:21.608328 [info ] [Thread-4 (]: 3 of 3 START sql table model public.user_post_summary .......................... [RUN]
+[0m13:00:21.611496 [debug] [Thread-4 (]: Acquiring new postgres connection 'model.postgres_analytics.user_post_summary'
+[0m13:00:21.612736 [debug] [Thread-4 (]: Began compiling node model.postgres_analytics.user_post_summary
+[0m13:00:21.617093 [debug] [Thread-4 (]: Writing injected SQL for node "model.postgres_analytics.user_post_summary"
+[0m13:00:21.629493 [debug] [Thread-4 (]: Timing info for model.postgres_analytics.user_post_summary (compile): 13:00:21.613692 => 13:00:21.625128
+[0m13:00:21.632644 [debug] [Thread-4 (]: Began executing node model.postgres_analytics.user_post_summary
+[0m13:00:21.664132 [debug] [Thread-4 (]: Writing runtime sql for node "model.postgres_analytics.user_post_summary"
+[0m13:00:21.666566 [debug] [Thread-4 (]: Using postgres connection "model.postgres_analytics.user_post_summary"
+[0m13:00:21.668070 [debug] [Thread-4 (]: On model.postgres_analytics.user_post_summary: BEGIN
+[0m13:00:21.669420 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m13:00:21.693692 [debug] [Thread-4 (]: SQL status: BEGIN in 0.0 seconds
+[0m13:00:21.696019 [debug] [Thread-4 (]: Using postgres connection "model.postgres_analytics.user_post_summary"
+[0m13:00:21.697975 [debug] [Thread-4 (]: On model.postgres_analytics.user_post_summary: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "default", "target_name": "dev", "node_id": "model.postgres_analytics.user_post_summary"} */
+
+  
+    
+
+  create  table "myapp"."public"."user_post_summary__dbt_tmp"
+  
+  
+    as
+  
+  (
+    -- models/marts/user_post_summary.sql
+
+
+select
+    u.user_id,
+    u.username,
+    u.email,
+    count(p.post_id) as total_posts,
+    min(p.created_at) as first_post_date,
+    max(p.created_at) as latest_post_date,
+    u.created_at as user_created_at
+from "myapp"."public"."stg_users" u
+left join "myapp"."public"."stg_posts" p on u.user_id = p.user_id
+group by 
+    u.user_id,
+    u.username,
+    u.email,
+    u.created_at
+  );
+  
+[0m13:00:21.714876 [debug] [Thread-4 (]: SQL status: SELECT 2 in 0.0 seconds
+[0m13:00:21.718868 [debug] [Thread-4 (]: Using postgres connection "model.postgres_analytics.user_post_summary"
+[0m13:00:21.720069 [debug] [Thread-4 (]: On model.postgres_analytics.user_post_summary: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "default", "target_name": "dev", "node_id": "model.postgres_analytics.user_post_summary"} */
+alter table "myapp"."public"."user_post_summary" rename to "user_post_summary__dbt_backup"
+[0m13:00:21.721621 [debug] [Thread-4 (]: SQL status: ALTER TABLE in 0.0 seconds
+[0m13:00:21.725257 [debug] [Thread-4 (]: Using postgres connection "model.postgres_analytics.user_post_summary"
+[0m13:00:21.726537 [debug] [Thread-4 (]: On model.postgres_analytics.user_post_summary: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "default", "target_name": "dev", "node_id": "model.postgres_analytics.user_post_summary"} */
+alter table "myapp"."public"."user_post_summary__dbt_tmp" rename to "user_post_summary"
+[0m13:00:21.728122 [debug] [Thread-4 (]: SQL status: ALTER TABLE in 0.0 seconds
+[0m13:00:21.738396 [debug] [Thread-4 (]: On model.postgres_analytics.user_post_summary: COMMIT
+[0m13:00:21.739558 [debug] [Thread-4 (]: Using postgres connection "model.postgres_analytics.user_post_summary"
+[0m13:00:21.740691 [debug] [Thread-4 (]: On model.postgres_analytics.user_post_summary: COMMIT
+[0m13:00:21.746361 [debug] [Thread-4 (]: SQL status: COMMIT in 0.0 seconds
+[0m13:00:21.749364 [debug] [Thread-4 (]: Applying DROP to: "myapp"."public"."user_post_summary__dbt_backup"
+[0m13:00:21.754013 [debug] [Thread-4 (]: Using postgres connection "model.postgres_analytics.user_post_summary"
+[0m13:00:21.755203 [debug] [Thread-4 (]: On model.postgres_analytics.user_post_summary: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "default", "target_name": "dev", "node_id": "model.postgres_analytics.user_post_summary"} */
+drop table if exists "myapp"."public"."user_post_summary__dbt_backup" cascade
+[0m13:00:21.761134 [debug] [Thread-4 (]: SQL status: DROP TABLE in 0.0 seconds
+[0m13:00:21.763946 [debug] [Thread-4 (]: Timing info for model.postgres_analytics.user_post_summary (execute): 13:00:21.640056 => 13:00:21.763743
+[0m13:00:21.765502 [debug] [Thread-4 (]: On model.postgres_analytics.user_post_summary: Close
+[0m13:00:21.767455 [debug] [Thread-4 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'a3257a86-afac-4898-9175-8b0abd5b82c6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d12d1979ed0>]}
+[0m13:00:21.770933 [info ] [Thread-4 (]: 3 of 3 OK created sql table model public.user_post_summary ..................... [[32mSELECT 2[0m in 0.16s]
+[0m13:00:21.773309 [debug] [Thread-4 (]: Finished running node model.postgres_analytics.user_post_summary
+[0m13:00:21.777688 [debug] [MainThread]: Using postgres connection "master"
+[0m13:00:21.779061 [debug] [MainThread]: On master: BEGIN
+[0m13:00:21.780765 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m13:00:21.790012 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m13:00:21.791126 [debug] [MainThread]: On master: COMMIT
+[0m13:00:21.792604 [debug] [MainThread]: Using postgres connection "master"
+[0m13:00:21.794083 [debug] [MainThread]: On master: COMMIT
+[0m13:00:21.795744 [debug] [MainThread]: SQL status: COMMIT in 0.0 seconds
+[0m13:00:21.797247 [debug] [MainThread]: On master: Close
+[0m13:00:21.799484 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m13:00:21.800833 [debug] [MainThread]: Connection 'model.postgres_analytics.stg_posts' was properly closed.
+[0m13:00:21.802142 [debug] [MainThread]: Connection 'model.postgres_analytics.stg_users' was properly closed.
+[0m13:00:21.803636 [debug] [MainThread]: Connection 'model.postgres_analytics.user_post_summary' was properly closed.
+[0m13:00:21.804953 [info ] [MainThread]: 
+[0m13:00:21.816242 [info ] [MainThread]: Finished running 2 view models, 1 table model in 0 hours 0 minutes and 0.75 seconds (0.75s).
+[0m13:00:21.830596 [debug] [MainThread]: Command end result
+[0m13:00:21.841738 [info ] [MainThread]: 
+[0m13:00:21.844020 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m13:00:21.846350 [info ] [MainThread]: 
+[0m13:00:21.848039 [info ] [MainThread]: Done. PASS=3 WARN=0 ERROR=0 SKIP=0 TOTAL=3
+[0m13:00:21.852209 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d12d39a2910>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d12d86195d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d12d3c96f90>]}
+[0m13:00:21.853634 [debug] [MainThread]: Flushing usage events
+[0m13:03:59.357914 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ddb2cb7ebd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ddb2ca39a50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ddb2d423a90>]}
+
+
+============================== 13:03:59.371981 | ab0d4769-b4d6-485d-85e1-18d3c2212dd8 ==============================
+[0m13:03:59.371981 [info ] [MainThread]: Running with dbt=1.7.4
+[0m13:03:59.376523 [debug] [MainThread]: running dbt with arguments {'use_colors': 'True', 'printer_width': '80', 'static_parser': 'True', 'warn_error': 'None', 'target_path': '/tmp/dbt_target', 'profiles_dir': '/dbt/profiles', 'use_experimental_parser': 'False', 'fail_fast': 'False', 'indirect_selection': 'eager', 'log_format': 'default', 'partial_parse': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'quiet': 'False', 'invocation_command': 'dbt run --target-path /tmp/dbt_target', 'write_json': 'True', 'log_path': '/dbt/project/logs', 'debug': 'False', 'no_print': 'None', 'log_cache_events': 'False', 'version_check': 'True', 'introspect': 'True', 'send_anonymous_usage_stats': 'True', 'cache_selected_only': 'False'}
+[0m13:03:59.657968 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'ab0d4769-b4d6-485d-85e1-18d3c2212dd8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ddb2b731e50>]}
+[0m13:03:59.772878 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'ab0d4769-b4d6-485d-85e1-18d3c2212dd8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ddb2c33f450>]}
+[0m13:03:59.774938 [info ] [MainThread]: Registered adapter: postgres=1.7.4
+[0m13:03:59.798712 [debug] [MainThread]: checksum: 248e8aba381ba2d577dce7ab50d2010c2aac45d2b27e6e6214cdd96d2d41fabc, vars: {}, profile: , target: , version: 1.7.4
+[0m13:03:59.807265 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m13:03:59.809184 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'ab0d4769-b4d6-485d-85e1-18d3c2212dd8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ddb2c7a9fd0>]}
+[0m13:04:01.321961 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'ab0d4769-b4d6-485d-85e1-18d3c2212dd8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ddb2b7e6090>]}
+[0m13:04:01.339765 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'ab0d4769-b4d6-485d-85e1-18d3c2212dd8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ddb2a388fd0>]}
+[0m13:04:01.341057 [info ] [MainThread]: Found 3 models, 11 tests, 2 sources, 0 exposures, 0 metrics, 401 macros, 0 groups, 0 semantic models
+[0m13:04:01.342569 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'ab0d4769-b4d6-485d-85e1-18d3c2212dd8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ddb2da6aa50>]}
+[0m13:04:01.346865 [info ] [MainThread]: 
+[0m13:04:01.349349 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m13:04:01.352234 [debug] [ThreadPool]: Acquiring new postgres connection 'list_myapp'
+[0m13:04:01.370354 [debug] [ThreadPool]: Using postgres connection "list_myapp"
+[0m13:04:01.373036 [debug] [ThreadPool]: On list_myapp: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "default", "target_name": "dev", "connection_name": "list_myapp"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m13:04:01.376229 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m13:04:01.431269 [debug] [ThreadPool]: SQL status: SELECT 4 in 0.0 seconds
+[0m13:04:01.475000 [debug] [ThreadPool]: On list_myapp: Close
+[0m13:04:01.483012 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_myapp, now list_myapp_public)
+[0m13:04:01.504422 [debug] [ThreadPool]: Using postgres connection "list_myapp_public"
+[0m13:04:01.506074 [debug] [ThreadPool]: On list_myapp_public: BEGIN
+[0m13:04:01.507375 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m13:04:01.524768 [debug] [ThreadPool]: SQL status: BEGIN in 0.0 seconds
+[0m13:04:01.526695 [debug] [ThreadPool]: Using postgres connection "list_myapp_public"
+[0m13:04:01.528187 [debug] [ThreadPool]: On list_myapp_public: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "default", "target_name": "dev", "connection_name": "list_myapp_public"} */
+select
+      'myapp' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public'
+    union all
+    select
+      'myapp' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public'
+    union all
+    select
+      'myapp' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'public'
+  
+[0m13:04:01.538348 [debug] [ThreadPool]: SQL status: SELECT 5 in 0.0 seconds
+[0m13:04:01.540893 [debug] [ThreadPool]: On list_myapp_public: ROLLBACK
+[0m13:04:01.542519 [debug] [ThreadPool]: On list_myapp_public: Close
+[0m13:04:01.551814 [debug] [MainThread]: Using postgres connection "master"
+[0m13:04:01.553333 [debug] [MainThread]: On master: BEGIN
+[0m13:04:01.554511 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m13:04:01.568567 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m13:04:01.569893 [debug] [MainThread]: Using postgres connection "master"
+[0m13:04:01.571003 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "default", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v', 'm')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m13:04:01.584283 [debug] [MainThread]: SQL status: SELECT 2 in 0.0 seconds
+[0m13:04:01.587365 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'ab0d4769-b4d6-485d-85e1-18d3c2212dd8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ddb2a371410>]}
+[0m13:04:01.588647 [debug] [MainThread]: On master: ROLLBACK
+[0m13:04:01.590003 [debug] [MainThread]: Using postgres connection "master"
+[0m13:04:01.591014 [debug] [MainThread]: On master: BEGIN
+[0m13:04:01.592689 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m13:04:01.594171 [debug] [MainThread]: On master: COMMIT
+[0m13:04:01.595446 [debug] [MainThread]: Using postgres connection "master"
+[0m13:04:01.596450 [debug] [MainThread]: On master: COMMIT
+[0m13:04:01.597926 [debug] [MainThread]: SQL status: COMMIT in 0.0 seconds
+[0m13:04:01.599037 [debug] [MainThread]: On master: Close
+[0m13:04:01.600905 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m13:04:01.603601 [info ] [MainThread]: 
+[0m13:04:01.622067 [debug] [Thread-1 (]: Began running node model.postgres_analytics.stg_posts
+[0m13:04:01.622678 [debug] [Thread-2 (]: Began running node model.postgres_analytics.stg_users
+[0m13:04:01.624136 [info ] [Thread-1 (]: 1 of 3 START sql view model public.stg_posts ................................... [RUN]
+[0m13:04:01.626670 [info ] [Thread-2 (]: 2 of 3 START sql view model public.stg_users ................................... [RUN]
+[0m13:04:01.630147 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_myapp_public, now model.postgres_analytics.stg_posts)
+[0m13:04:01.632607 [debug] [Thread-2 (]: Acquiring new postgres connection 'model.postgres_analytics.stg_users'
+[0m13:04:01.634259 [debug] [Thread-1 (]: Began compiling node model.postgres_analytics.stg_posts
+[0m13:04:01.636061 [debug] [Thread-2 (]: Began compiling node model.postgres_analytics.stg_users
+[0m13:04:01.646699 [debug] [Thread-1 (]: Writing injected SQL for node "model.postgres_analytics.stg_posts"
+[0m13:04:01.651713 [debug] [Thread-2 (]: Writing injected SQL for node "model.postgres_analytics.stg_users"
+[0m13:04:01.664168 [debug] [Thread-1 (]: Timing info for model.postgres_analytics.stg_posts (compile): 13:04:01.637290 => 13:04:01.663829
+[0m13:04:01.666200 [debug] [Thread-2 (]: Timing info for model.postgres_analytics.stg_users (compile): 13:04:01.648181 => 13:04:01.665836
+[0m13:04:01.668914 [debug] [Thread-1 (]: Began executing node model.postgres_analytics.stg_posts
+[0m13:04:01.678354 [debug] [Thread-2 (]: Began executing node model.postgres_analytics.stg_users
+[0m13:04:01.749701 [debug] [Thread-1 (]: Writing runtime sql for node "model.postgres_analytics.stg_posts"
+[0m13:04:01.751922 [debug] [Thread-2 (]: Writing runtime sql for node "model.postgres_analytics.stg_users"
+[0m13:04:01.756155 [debug] [Thread-2 (]: Using postgres connection "model.postgres_analytics.stg_users"
+[0m13:04:01.756767 [debug] [Thread-1 (]: Using postgres connection "model.postgres_analytics.stg_posts"
+[0m13:04:01.757868 [debug] [Thread-2 (]: On model.postgres_analytics.stg_users: BEGIN
+[0m13:04:01.759373 [debug] [Thread-1 (]: On model.postgres_analytics.stg_posts: BEGIN
+[0m13:04:01.760793 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m13:04:01.762199 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m13:04:01.780021 [debug] [Thread-2 (]: SQL status: BEGIN in 0.0 seconds
+[0m13:04:01.781686 [debug] [Thread-2 (]: Using postgres connection "model.postgres_analytics.stg_users"
+[0m13:04:01.783016 [debug] [Thread-1 (]: SQL status: BEGIN in 0.0 seconds
+[0m13:04:01.783702 [debug] [Thread-2 (]: On model.postgres_analytics.stg_users: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "default", "target_name": "dev", "node_id": "model.postgres_analytics.stg_users"} */
+
+  create view "myapp"."public"."stg_users__dbt_tmp"
+    
+    
+  as (
+    -- models/staging/stg_users.sql
+
+
+select
+    id as user_id,
+    username,
+    email,
+    created_at,
+    updated_at
+from "myapp"."public"."users"
+  );
+[0m13:04:01.785055 [debug] [Thread-1 (]: Using postgres connection "model.postgres_analytics.stg_posts"
+[0m13:04:01.787460 [debug] [Thread-1 (]: On model.postgres_analytics.stg_posts: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "default", "target_name": "dev", "node_id": "model.postgres_analytics.stg_posts"} */
+
+  create view "myapp"."public"."stg_posts__dbt_tmp"
+    
+    
+  as (
+    -- models/staging/stg_posts.sql
+
+
+select
+    id as post_id,
+    user_id,
+    title,
+    content,
+    created_at,
+    updated_at
+from "myapp"."public"."posts"
+  );
+[0m13:04:01.790841 [debug] [Thread-1 (]: SQL status: CREATE VIEW in 0.0 seconds
+[0m13:04:01.791454 [debug] [Thread-2 (]: SQL status: CREATE VIEW in 0.0 seconds
+[0m13:04:01.802625 [debug] [Thread-1 (]: Using postgres connection "model.postgres_analytics.stg_posts"
+[0m13:04:01.807562 [debug] [Thread-2 (]: Using postgres connection "model.postgres_analytics.stg_users"
+[0m13:04:01.809266 [debug] [Thread-1 (]: On model.postgres_analytics.stg_posts: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "default", "target_name": "dev", "node_id": "model.postgres_analytics.stg_posts"} */
+alter table "myapp"."public"."stg_posts" rename to "stg_posts__dbt_backup"
+[0m13:04:01.810653 [debug] [Thread-2 (]: On model.postgres_analytics.stg_users: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "default", "target_name": "dev", "node_id": "model.postgres_analytics.stg_users"} */
+alter table "myapp"."public"."stg_users" rename to "stg_users__dbt_backup"
+[0m13:04:01.812756 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.0 seconds
+[0m13:04:01.814562 [debug] [Thread-2 (]: SQL status: ALTER TABLE in 0.0 seconds
+[0m13:04:01.817957 [debug] [Thread-1 (]: Using postgres connection "model.postgres_analytics.stg_posts"
+[0m13:04:01.822024 [debug] [Thread-2 (]: Using postgres connection "model.postgres_analytics.stg_users"
+[0m13:04:01.823389 [debug] [Thread-1 (]: On model.postgres_analytics.stg_posts: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "default", "target_name": "dev", "node_id": "model.postgres_analytics.stg_posts"} */
+alter table "myapp"."public"."stg_posts__dbt_tmp" rename to "stg_posts"
+[0m13:04:01.824887 [debug] [Thread-2 (]: On model.postgres_analytics.stg_users: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "default", "target_name": "dev", "node_id": "model.postgres_analytics.stg_users"} */
+alter table "myapp"."public"."stg_users__dbt_tmp" rename to "stg_users"
+[0m13:04:01.827099 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.0 seconds
+[0m13:04:01.828659 [debug] [Thread-2 (]: SQL status: ALTER TABLE in 0.0 seconds
+[0m13:04:01.866675 [debug] [Thread-1 (]: On model.postgres_analytics.stg_posts: COMMIT
+[0m13:04:01.868836 [debug] [Thread-2 (]: On model.postgres_analytics.stg_users: COMMIT
+[0m13:04:01.869916 [debug] [Thread-1 (]: Using postgres connection "model.postgres_analytics.stg_posts"
+[0m13:04:01.871403 [debug] [Thread-2 (]: Using postgres connection "model.postgres_analytics.stg_users"
+[0m13:04:01.872584 [debug] [Thread-1 (]: On model.postgres_analytics.stg_posts: COMMIT
+[0m13:04:01.873920 [debug] [Thread-2 (]: On model.postgres_analytics.stg_users: COMMIT
+[0m13:04:01.880742 [debug] [Thread-1 (]: SQL status: COMMIT in 0.0 seconds
+[0m13:04:01.887994 [debug] [Thread-1 (]: Applying DROP to: "myapp"."public"."stg_posts__dbt_backup"
+[0m13:04:01.888715 [debug] [Thread-2 (]: SQL status: COMMIT in 0.0 seconds
+[0m13:04:01.897764 [debug] [Thread-1 (]: Using postgres connection "model.postgres_analytics.stg_posts"
+[0m13:04:01.900998 [debug] [Thread-2 (]: Applying DROP to: "myapp"."public"."stg_users__dbt_backup"
+[0m13:04:01.902394 [debug] [Thread-1 (]: On model.postgres_analytics.stg_posts: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "default", "target_name": "dev", "node_id": "model.postgres_analytics.stg_posts"} */
+drop view if exists "myapp"."public"."stg_posts__dbt_backup" cascade
+[0m13:04:01.903972 [debug] [Thread-2 (]: Using postgres connection "model.postgres_analytics.stg_users"
+[0m13:04:01.906381 [debug] [Thread-2 (]: On model.postgres_analytics.stg_users: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "default", "target_name": "dev", "node_id": "model.postgres_analytics.stg_users"} */
+drop view if exists "myapp"."public"."stg_users__dbt_backup" cascade
+[0m13:04:01.910995 [debug] [Thread-1 (]: SQL status: DROP VIEW in 0.0 seconds
+[0m13:04:01.913391 [debug] [Thread-1 (]: Timing info for model.postgres_analytics.stg_posts (execute): 13:04:01.680019 => 13:04:01.913160
+[0m13:04:01.914016 [debug] [Thread-2 (]: SQL status: DROP VIEW in 0.0 seconds
+[0m13:04:01.915022 [debug] [Thread-1 (]: On model.postgres_analytics.stg_posts: Close
+[0m13:04:01.917241 [debug] [Thread-2 (]: Timing info for model.postgres_analytics.stg_users (execute): 13:04:01.702678 => 13:04:01.917066
+[0m13:04:01.919022 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'ab0d4769-b4d6-485d-85e1-18d3c2212dd8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ddb2ab66a10>]}
+[0m13:04:01.923535 [debug] [Thread-2 (]: On model.postgres_analytics.stg_users: Close
+[0m13:04:01.925159 [info ] [Thread-1 (]: 1 of 3 OK created sql view model public.stg_posts .............................. [[32mCREATE VIEW[0m in 0.29s]
+[0m13:04:01.927506 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'ab0d4769-b4d6-485d-85e1-18d3c2212dd8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ddb2ab65810>]}
+[0m13:04:01.929397 [debug] [Thread-1 (]: Finished running node model.postgres_analytics.stg_posts
+[0m13:04:01.931518 [info ] [Thread-2 (]: 2 of 3 OK created sql view model public.stg_users .............................. [[32mCREATE VIEW[0m in 0.30s]
+[0m13:04:01.935804 [debug] [Thread-2 (]: Finished running node model.postgres_analytics.stg_users
+[0m13:04:01.938055 [debug] [Thread-4 (]: Began running node model.postgres_analytics.user_post_summary
+[0m13:04:01.940289 [info ] [Thread-4 (]: 3 of 3 START sql table model public.user_post_summary .......................... [RUN]
+[0m13:04:01.942655 [debug] [Thread-4 (]: Acquiring new postgres connection 'model.postgres_analytics.user_post_summary'
+[0m13:04:01.944092 [debug] [Thread-4 (]: Began compiling node model.postgres_analytics.user_post_summary
+[0m13:04:01.948990 [debug] [Thread-4 (]: Writing injected SQL for node "model.postgres_analytics.user_post_summary"
+[0m13:04:01.951390 [debug] [Thread-4 (]: Timing info for model.postgres_analytics.user_post_summary (compile): 13:04:01.945231 => 13:04:01.950996
+[0m13:04:01.953044 [debug] [Thread-4 (]: Began executing node model.postgres_analytics.user_post_summary
+[0m13:04:02.004884 [debug] [Thread-4 (]: Writing runtime sql for node "model.postgres_analytics.user_post_summary"
+[0m13:04:02.013514 [debug] [Thread-4 (]: Using postgres connection "model.postgres_analytics.user_post_summary"
+[0m13:04:02.014992 [debug] [Thread-4 (]: On model.postgres_analytics.user_post_summary: BEGIN
+[0m13:04:02.017548 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m13:04:02.030838 [debug] [Thread-4 (]: SQL status: BEGIN in 0.0 seconds
+[0m13:04:02.032749 [debug] [Thread-4 (]: Using postgres connection "model.postgres_analytics.user_post_summary"
+[0m13:04:02.034107 [debug] [Thread-4 (]: On model.postgres_analytics.user_post_summary: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "default", "target_name": "dev", "node_id": "model.postgres_analytics.user_post_summary"} */
+
+  
+    
+
+  create  table "myapp"."public"."user_post_summary__dbt_tmp"
+  
+  
+    as
+  
+  (
+    -- models/marts/user_post_summary.sql
+
+
+select
+    u.user_id,
+    u.username,
+    u.email,
+    count(p.post_id) as total_posts,
+    min(p.created_at) as first_post_date,
+    max(p.created_at) as latest_post_date,
+    u.created_at as user_created_at
+from "myapp"."public"."stg_users" u
+left join "myapp"."public"."stg_posts" p on u.user_id = p.user_id
+group by 
+    u.user_id,
+    u.username,
+    u.email,
+    u.created_at
+  );
+  
+[0m13:04:02.041257 [debug] [Thread-4 (]: SQL status: SELECT 2 in 0.0 seconds
+[0m13:04:02.045724 [debug] [Thread-4 (]: Using postgres connection "model.postgres_analytics.user_post_summary"
+[0m13:04:02.049475 [debug] [Thread-4 (]: On model.postgres_analytics.user_post_summary: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "default", "target_name": "dev", "node_id": "model.postgres_analytics.user_post_summary"} */
+alter table "myapp"."public"."user_post_summary" rename to "user_post_summary__dbt_backup"
+[0m13:04:02.052138 [debug] [Thread-4 (]: SQL status: ALTER TABLE in 0.0 seconds
+[0m13:04:02.057063 [debug] [Thread-4 (]: Using postgres connection "model.postgres_analytics.user_post_summary"
+[0m13:04:02.058408 [debug] [Thread-4 (]: On model.postgres_analytics.user_post_summary: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "default", "target_name": "dev", "node_id": "model.postgres_analytics.user_post_summary"} */
+alter table "myapp"."public"."user_post_summary__dbt_tmp" rename to "user_post_summary"
+[0m13:04:02.060128 [debug] [Thread-4 (]: SQL status: ALTER TABLE in 0.0 seconds
+[0m13:04:02.071599 [debug] [Thread-4 (]: On model.postgres_analytics.user_post_summary: COMMIT
+[0m13:04:02.072957 [debug] [Thread-4 (]: Using postgres connection "model.postgres_analytics.user_post_summary"
+[0m13:04:02.074237 [debug] [Thread-4 (]: On model.postgres_analytics.user_post_summary: COMMIT
+[0m13:04:02.079398 [debug] [Thread-4 (]: SQL status: COMMIT in 0.0 seconds
+[0m13:04:02.083365 [debug] [Thread-4 (]: Applying DROP to: "myapp"."public"."user_post_summary__dbt_backup"
+[0m13:04:02.088928 [debug] [Thread-4 (]: Using postgres connection "model.postgres_analytics.user_post_summary"
+[0m13:04:02.090134 [debug] [Thread-4 (]: On model.postgres_analytics.user_post_summary: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "default", "target_name": "dev", "node_id": "model.postgres_analytics.user_post_summary"} */
+drop table if exists "myapp"."public"."user_post_summary__dbt_backup" cascade
+[0m13:04:02.095749 [debug] [Thread-4 (]: SQL status: DROP TABLE in 0.0 seconds
+[0m13:04:02.097910 [debug] [Thread-4 (]: Timing info for model.postgres_analytics.user_post_summary (execute): 13:04:01.954384 => 13:04:02.097721
+[0m13:04:02.099010 [debug] [Thread-4 (]: On model.postgres_analytics.user_post_summary: Close
+[0m13:04:02.100640 [debug] [Thread-4 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'ab0d4769-b4d6-485d-85e1-18d3c2212dd8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ddb29f88190>]}
+[0m13:04:02.102037 [info ] [Thread-4 (]: 3 of 3 OK created sql table model public.user_post_summary ..................... [[32mSELECT 2[0m in 0.16s]
+[0m13:04:02.104307 [debug] [Thread-4 (]: Finished running node model.postgres_analytics.user_post_summary
+[0m13:04:02.109415 [debug] [MainThread]: Using postgres connection "master"
+[0m13:04:02.114493 [debug] [MainThread]: On master: BEGIN
+[0m13:04:02.116059 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m13:04:02.127955 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m13:04:02.129546 [debug] [MainThread]: On master: COMMIT
+[0m13:04:02.131162 [debug] [MainThread]: Using postgres connection "master"
+[0m13:04:02.132591 [debug] [MainThread]: On master: COMMIT
+[0m13:04:02.134245 [debug] [MainThread]: SQL status: COMMIT in 0.0 seconds
+[0m13:04:02.135611 [debug] [MainThread]: On master: Close
+[0m13:04:02.137162 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m13:04:02.138281 [debug] [MainThread]: Connection 'model.postgres_analytics.stg_posts' was properly closed.
+[0m13:04:02.139598 [debug] [MainThread]: Connection 'model.postgres_analytics.stg_users' was properly closed.
+[0m13:04:02.141237 [debug] [MainThread]: Connection 'model.postgres_analytics.user_post_summary' was properly closed.
+[0m13:04:02.142632 [info ] [MainThread]: 
+[0m13:04:02.144465 [info ] [MainThread]: Finished running 2 view models, 1 table model in 0 hours 0 minutes and 0.79 seconds (0.79s).
+[0m13:04:02.148556 [debug] [MainThread]: Command end result
+[0m13:04:02.172345 [info ] [MainThread]: 
+[0m13:04:02.176849 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m13:04:02.197023 [info ] [MainThread]: 
+[0m13:04:02.199867 [info ] [MainThread]: Done. PASS=3 WARN=0 ERROR=0 SKIP=0 TOTAL=3
+[0m13:04:02.202437 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ddb2bff5290>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ddb2c4518d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ddb2c627d50>]}
+[0m13:04:02.207398 [debug] [MainThread]: Flushing usage events
+[0m13:09:35.496160 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dda3a9e6f50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dda3a662b50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dda3a663e10>]}
+
+
+============================== 13:09:35.506072 | 4ca5cf43-632b-4054-9055-a5d92cff9631 ==============================
+[0m13:09:35.506072 [info ] [MainThread]: Running with dbt=1.7.4
+[0m13:09:35.508295 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'write_json': 'True', 'send_anonymous_usage_stats': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'log_path': '/dbt/project/logs', 'invocation_command': 'dbt run --target-path /tmp/dbt_target', 'target_path': '/tmp/dbt_target', 'use_colors': 'True', 'fail_fast': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'profiles_dir': '/dbt/profiles', 'debug': 'False', 'quiet': 'False', 'log_format': 'default', 'partial_parse': 'True', 'static_parser': 'True', 'log_cache_events': 'False', 'introspect': 'True', 'use_experimental_parser': 'False', 'indirect_selection': 'eager', 'printer_width': '80'}
+[0m13:09:35.727490 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '4ca5cf43-632b-4054-9055-a5d92cff9631', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dda3a55dfd0>]}
+[0m13:09:35.824409 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '4ca5cf43-632b-4054-9055-a5d92cff9631', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dda3a82ed10>]}
+[0m13:09:35.826221 [info ] [MainThread]: Registered adapter: postgres=1.7.4
+[0m13:09:35.846503 [debug] [MainThread]: checksum: 248e8aba381ba2d577dce7ab50d2010c2aac45d2b27e6e6214cdd96d2d41fabc, vars: {}, profile: , target: , version: 1.7.4
+[0m13:09:35.852208 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m13:09:35.853714 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '4ca5cf43-632b-4054-9055-a5d92cff9631', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dda39930e10>]}
+[0m13:09:37.495223 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '4ca5cf43-632b-4054-9055-a5d92cff9631', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dda3912f5d0>]}
+[0m13:09:37.509007 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '4ca5cf43-632b-4054-9055-a5d92cff9631', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dda38996290>]}
+[0m13:09:37.510386 [info ] [MainThread]: Found 3 models, 11 tests, 2 sources, 0 exposures, 0 metrics, 401 macros, 0 groups, 0 semantic models
+[0m13:09:37.512097 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '4ca5cf43-632b-4054-9055-a5d92cff9631', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dda3a40ca10>]}
+[0m13:09:37.515468 [info ] [MainThread]: 
+[0m13:09:37.517588 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m13:09:37.523999 [debug] [ThreadPool]: Acquiring new postgres connection 'list_myapp'
+[0m13:09:37.542852 [debug] [ThreadPool]: Using postgres connection "list_myapp"
+[0m13:09:37.548562 [debug] [ThreadPool]: On list_myapp: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "default", "target_name": "dev", "connection_name": "list_myapp"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m13:09:37.556659 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m13:09:37.589304 [debug] [ThreadPool]: SQL status: SELECT 4 in 0.0 seconds
+[0m13:09:37.597333 [debug] [ThreadPool]: On list_myapp: Close
+[0m13:09:37.601157 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_myapp, now list_myapp_public)
+[0m13:09:37.608138 [debug] [ThreadPool]: Using postgres connection "list_myapp_public"
+[0m13:09:37.609196 [debug] [ThreadPool]: On list_myapp_public: BEGIN
+[0m13:09:37.610364 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m13:09:37.622417 [debug] [ThreadPool]: SQL status: BEGIN in 0.0 seconds
+[0m13:09:37.623994 [debug] [ThreadPool]: Using postgres connection "list_myapp_public"
+[0m13:09:37.625142 [debug] [ThreadPool]: On list_myapp_public: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "default", "target_name": "dev", "connection_name": "list_myapp_public"} */
+select
+      'myapp' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public'
+    union all
+    select
+      'myapp' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public'
+    union all
+    select
+      'myapp' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'public'
+  
+[0m13:09:37.631107 [debug] [ThreadPool]: SQL status: SELECT 5 in 0.0 seconds
+[0m13:09:37.633175 [debug] [ThreadPool]: On list_myapp_public: ROLLBACK
+[0m13:09:37.634562 [debug] [ThreadPool]: On list_myapp_public: Close
+[0m13:09:37.641421 [debug] [MainThread]: Using postgres connection "master"
+[0m13:09:37.642751 [debug] [MainThread]: On master: BEGIN
+[0m13:09:37.646538 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m13:09:37.658347 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m13:09:37.659831 [debug] [MainThread]: Using postgres connection "master"
+[0m13:09:37.660961 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "default", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v', 'm')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m13:09:37.669887 [debug] [MainThread]: SQL status: SELECT 2 in 0.0 seconds
+[0m13:09:37.672353 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '4ca5cf43-632b-4054-9055-a5d92cff9631', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dda3951a490>]}
+[0m13:09:37.673797 [debug] [MainThread]: On master: ROLLBACK
+[0m13:09:37.675162 [debug] [MainThread]: Using postgres connection "master"
+[0m13:09:37.676801 [debug] [MainThread]: On master: BEGIN
+[0m13:09:37.679091 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m13:09:37.680782 [debug] [MainThread]: On master: COMMIT
+[0m13:09:37.682086 [debug] [MainThread]: Using postgres connection "master"
+[0m13:09:37.683228 [debug] [MainThread]: On master: COMMIT
+[0m13:09:37.684743 [debug] [MainThread]: SQL status: COMMIT in 0.0 seconds
+[0m13:09:37.686089 [debug] [MainThread]: On master: Close
+[0m13:09:37.687671 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m13:09:37.689087 [info ] [MainThread]: 
+[0m13:09:37.711787 [debug] [Thread-1 (]: Began running node model.postgres_analytics.stg_posts
+[0m13:09:37.712425 [debug] [Thread-2 (]: Began running node model.postgres_analytics.stg_users
+[0m13:09:37.714136 [info ] [Thread-1 (]: 1 of 3 START sql view model public.stg_posts ................................... [RUN]
+[0m13:09:37.716577 [info ] [Thread-2 (]: 2 of 3 START sql view model public.stg_users ................................... [RUN]
+[0m13:09:37.720389 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_myapp_public, now model.postgres_analytics.stg_posts)
+[0m13:09:37.722499 [debug] [Thread-2 (]: Acquiring new postgres connection 'model.postgres_analytics.stg_users'
+[0m13:09:37.729437 [debug] [Thread-1 (]: Began compiling node model.postgres_analytics.stg_posts
+[0m13:09:37.731818 [debug] [Thread-2 (]: Began compiling node model.postgres_analytics.stg_users
+[0m13:09:37.755897 [debug] [Thread-1 (]: Writing injected SQL for node "model.postgres_analytics.stg_posts"
+[0m13:09:37.760267 [debug] [Thread-2 (]: Writing injected SQL for node "model.postgres_analytics.stg_users"
+[0m13:09:37.764453 [debug] [Thread-1 (]: Timing info for model.postgres_analytics.stg_posts (compile): 13:09:37.746438 => 13:09:37.764221
+[0m13:09:37.765004 [debug] [Thread-2 (]: Timing info for model.postgres_analytics.stg_users (compile): 13:09:37.757544 => 13:09:37.764708
+[0m13:09:37.765971 [debug] [Thread-1 (]: Began executing node model.postgres_analytics.stg_posts
+[0m13:09:37.766997 [debug] [Thread-2 (]: Began executing node model.postgres_analytics.stg_users
+[0m13:09:37.860152 [debug] [Thread-1 (]: Writing runtime sql for node "model.postgres_analytics.stg_posts"
+[0m13:09:37.862557 [debug] [Thread-2 (]: Writing runtime sql for node "model.postgres_analytics.stg_users"
+[0m13:09:37.867534 [debug] [Thread-1 (]: Using postgres connection "model.postgres_analytics.stg_posts"
+[0m13:09:37.871338 [debug] [Thread-1 (]: On model.postgres_analytics.stg_posts: BEGIN
+[0m13:09:37.869801 [debug] [Thread-2 (]: Using postgres connection "model.postgres_analytics.stg_users"
+[0m13:09:37.874089 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m13:09:37.875395 [debug] [Thread-2 (]: On model.postgres_analytics.stg_users: BEGIN
+[0m13:09:37.878273 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m13:09:37.887633 [debug] [Thread-1 (]: SQL status: BEGIN in 0.0 seconds
+[0m13:09:37.888787 [debug] [Thread-2 (]: SQL status: BEGIN in 0.0 seconds
+[0m13:09:37.889594 [debug] [Thread-1 (]: Using postgres connection "model.postgres_analytics.stg_posts"
+[0m13:09:37.890832 [debug] [Thread-2 (]: Using postgres connection "model.postgres_analytics.stg_users"
+[0m13:09:37.892033 [debug] [Thread-1 (]: On model.postgres_analytics.stg_posts: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "default", "target_name": "dev", "node_id": "model.postgres_analytics.stg_posts"} */
+
+  create view "myapp"."public"."stg_posts__dbt_tmp"
+    
+    
+  as (
+    -- models/staging/stg_posts.sql
+
+
+select
+    id as post_id,
+    user_id,
+    title,
+    content,
+    created_at,
+    updated_at
+from "myapp"."public"."posts"
+  );
+[0m13:09:37.893240 [debug] [Thread-2 (]: On model.postgres_analytics.stg_users: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "default", "target_name": "dev", "node_id": "model.postgres_analytics.stg_users"} */
+
+  create view "myapp"."public"."stg_users__dbt_tmp"
+    
+    
+  as (
+    -- models/staging/stg_users.sql
+
+
+select
+    id as user_id,
+    username,
+    email,
+    created_at,
+    updated_at
+from "myapp"."public"."users"
+  );
+[0m13:09:37.901102 [debug] [Thread-2 (]: SQL status: CREATE VIEW in 0.0 seconds
+[0m13:09:37.901708 [debug] [Thread-1 (]: SQL status: CREATE VIEW in 0.0 seconds
+[0m13:09:37.909165 [debug] [Thread-2 (]: Using postgres connection "model.postgres_analytics.stg_users"
+[0m13:09:37.912368 [debug] [Thread-1 (]: Using postgres connection "model.postgres_analytics.stg_posts"
+[0m13:09:37.913859 [debug] [Thread-2 (]: On model.postgres_analytics.stg_users: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "default", "target_name": "dev", "node_id": "model.postgres_analytics.stg_users"} */
+alter table "myapp"."public"."stg_users" rename to "stg_users__dbt_backup"
+[0m13:09:37.914964 [debug] [Thread-1 (]: On model.postgres_analytics.stg_posts: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "default", "target_name": "dev", "node_id": "model.postgres_analytics.stg_posts"} */
+alter table "myapp"."public"."stg_posts" rename to "stg_posts__dbt_backup"
+[0m13:09:37.916754 [debug] [Thread-2 (]: SQL status: ALTER TABLE in 0.0 seconds
+[0m13:09:37.917727 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.0 seconds
+[0m13:09:37.920949 [debug] [Thread-2 (]: Using postgres connection "model.postgres_analytics.stg_users"
+[0m13:09:37.924220 [debug] [Thread-1 (]: Using postgres connection "model.postgres_analytics.stg_posts"
+[0m13:09:37.925758 [debug] [Thread-2 (]: On model.postgres_analytics.stg_users: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "default", "target_name": "dev", "node_id": "model.postgres_analytics.stg_users"} */
+alter table "myapp"."public"."stg_users__dbt_tmp" rename to "stg_users"
+[0m13:09:37.927494 [debug] [Thread-1 (]: On model.postgres_analytics.stg_posts: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "default", "target_name": "dev", "node_id": "model.postgres_analytics.stg_posts"} */
+alter table "myapp"."public"."stg_posts__dbt_tmp" rename to "stg_posts"
+[0m13:09:37.929583 [debug] [Thread-2 (]: SQL status: ALTER TABLE in 0.0 seconds
+[0m13:09:37.930856 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.0 seconds
+[0m13:09:37.948801 [debug] [Thread-2 (]: On model.postgres_analytics.stg_users: COMMIT
+[0m13:09:37.950467 [debug] [Thread-1 (]: On model.postgres_analytics.stg_posts: COMMIT
+[0m13:09:37.951713 [debug] [Thread-2 (]: Using postgres connection "model.postgres_analytics.stg_users"
+[0m13:09:37.952723 [debug] [Thread-1 (]: Using postgres connection "model.postgres_analytics.stg_posts"
+[0m13:09:37.954002 [debug] [Thread-2 (]: On model.postgres_analytics.stg_users: COMMIT
+[0m13:09:37.955048 [debug] [Thread-1 (]: On model.postgres_analytics.stg_posts: COMMIT
+[0m13:09:37.967046 [debug] [Thread-2 (]: SQL status: COMMIT in 0.0 seconds
+[0m13:09:37.974352 [debug] [Thread-2 (]: Applying DROP to: "myapp"."public"."stg_users__dbt_backup"
+[0m13:09:37.974927 [debug] [Thread-1 (]: SQL status: COMMIT in 0.0 seconds
+[0m13:09:37.982697 [debug] [Thread-2 (]: Using postgres connection "model.postgres_analytics.stg_users"
+[0m13:09:37.985438 [debug] [Thread-1 (]: Applying DROP to: "myapp"."public"."stg_posts__dbt_backup"
+[0m13:09:37.986766 [debug] [Thread-2 (]: On model.postgres_analytics.stg_users: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "default", "target_name": "dev", "node_id": "model.postgres_analytics.stg_users"} */
+drop view if exists "myapp"."public"."stg_users__dbt_backup" cascade
+[0m13:09:37.988825 [debug] [Thread-1 (]: Using postgres connection "model.postgres_analytics.stg_posts"
+[0m13:09:37.991347 [debug] [Thread-1 (]: On model.postgres_analytics.stg_posts: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "default", "target_name": "dev", "node_id": "model.postgres_analytics.stg_posts"} */
+drop view if exists "myapp"."public"."stg_posts__dbt_backup" cascade
+[0m13:09:37.994702 [debug] [Thread-2 (]: SQL status: DROP VIEW in 0.0 seconds
+[0m13:09:37.996970 [debug] [Thread-2 (]: Timing info for model.postgres_analytics.stg_users (execute): 13:09:37.819885 => 13:09:37.996768
+[0m13:09:37.997757 [debug] [Thread-1 (]: SQL status: DROP VIEW in 0.0 seconds
+[0m13:09:37.998507 [debug] [Thread-2 (]: On model.postgres_analytics.stg_users: Close
+[0m13:09:38.000511 [debug] [Thread-1 (]: Timing info for model.postgres_analytics.stg_posts (execute): 13:09:37.768101 => 13:09:38.000335
+[0m13:09:38.002404 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '4ca5cf43-632b-4054-9055-a5d92cff9631', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dda3a432e10>]}
+[0m13:09:38.003546 [debug] [Thread-1 (]: On model.postgres_analytics.stg_posts: Close
+[0m13:09:38.005236 [info ] [Thread-2 (]: 2 of 3 OK created sql view model public.stg_users .............................. [[32mCREATE VIEW[0m in 0.28s]
+[0m13:09:38.007746 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '4ca5cf43-632b-4054-9055-a5d92cff9631', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dda39198f50>]}
+[0m13:09:38.009564 [debug] [Thread-2 (]: Finished running node model.postgres_analytics.stg_users
+[0m13:09:38.011418 [info ] [Thread-1 (]: 1 of 3 OK created sql view model public.stg_posts .............................. [[32mCREATE VIEW[0m in 0.29s]
+[0m13:09:38.015372 [debug] [Thread-1 (]: Finished running node model.postgres_analytics.stg_posts
+[0m13:09:38.017453 [debug] [Thread-4 (]: Began running node model.postgres_analytics.user_post_summary
+[0m13:09:38.020299 [info ] [Thread-4 (]: 3 of 3 START sql table model public.user_post_summary .......................... [RUN]
+[0m13:09:38.023460 [debug] [Thread-4 (]: Acquiring new postgres connection 'model.postgres_analytics.user_post_summary'
+[0m13:09:38.024945 [debug] [Thread-4 (]: Began compiling node model.postgres_analytics.user_post_summary
+[0m13:09:38.031363 [debug] [Thread-4 (]: Writing injected SQL for node "model.postgres_analytics.user_post_summary"
+[0m13:09:38.039997 [debug] [Thread-4 (]: Timing info for model.postgres_analytics.user_post_summary (compile): 13:09:38.026127 => 13:09:38.039619
+[0m13:09:38.044959 [debug] [Thread-4 (]: Began executing node model.postgres_analytics.user_post_summary
+[0m13:09:38.078261 [debug] [Thread-4 (]: Writing runtime sql for node "model.postgres_analytics.user_post_summary"
+[0m13:09:38.080438 [debug] [Thread-4 (]: Using postgres connection "model.postgres_analytics.user_post_summary"
+[0m13:09:38.083362 [debug] [Thread-4 (]: On model.postgres_analytics.user_post_summary: BEGIN
+[0m13:09:38.084639 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m13:09:38.105562 [debug] [Thread-4 (]: SQL status: BEGIN in 0.0 seconds
+[0m13:09:38.109482 [debug] [Thread-4 (]: Using postgres connection "model.postgres_analytics.user_post_summary"
+[0m13:09:38.112655 [debug] [Thread-4 (]: On model.postgres_analytics.user_post_summary: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "default", "target_name": "dev", "node_id": "model.postgres_analytics.user_post_summary"} */
+
+  
+    
+
+  create  table "myapp"."public"."user_post_summary__dbt_tmp"
+  
+  
+    as
+  
+  (
+    -- models/marts/user_post_summary.sql
+
+
+select
+    u.user_id,
+    u.username,
+    u.email,
+    count(p.post_id) as total_posts,
+    min(p.created_at) as first_post_date,
+    max(p.created_at) as latest_post_date,
+    u.created_at as user_created_at
+from "myapp"."public"."stg_users" u
+left join "myapp"."public"."stg_posts" p on u.user_id = p.user_id
+group by 
+    u.user_id,
+    u.username,
+    u.email,
+    u.created_at
+  );
+  
+[0m13:09:38.124676 [debug] [Thread-4 (]: SQL status: SELECT 2 in 0.0 seconds
+[0m13:09:38.130018 [debug] [Thread-4 (]: Using postgres connection "model.postgres_analytics.user_post_summary"
+[0m13:09:38.131250 [debug] [Thread-4 (]: On model.postgres_analytics.user_post_summary: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "default", "target_name": "dev", "node_id": "model.postgres_analytics.user_post_summary"} */
+alter table "myapp"."public"."user_post_summary" rename to "user_post_summary__dbt_backup"
+[0m13:09:38.132860 [debug] [Thread-4 (]: SQL status: ALTER TABLE in 0.0 seconds
+[0m13:09:38.136258 [debug] [Thread-4 (]: Using postgres connection "model.postgres_analytics.user_post_summary"
+[0m13:09:38.137588 [debug] [Thread-4 (]: On model.postgres_analytics.user_post_summary: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "default", "target_name": "dev", "node_id": "model.postgres_analytics.user_post_summary"} */
+alter table "myapp"."public"."user_post_summary__dbt_tmp" rename to "user_post_summary"
+[0m13:09:38.139016 [debug] [Thread-4 (]: SQL status: ALTER TABLE in 0.0 seconds
+[0m13:09:38.151532 [debug] [Thread-4 (]: On model.postgres_analytics.user_post_summary: COMMIT
+[0m13:09:38.153445 [debug] [Thread-4 (]: Using postgres connection "model.postgres_analytics.user_post_summary"
+[0m13:09:38.154830 [debug] [Thread-4 (]: On model.postgres_analytics.user_post_summary: COMMIT
+[0m13:09:38.159455 [debug] [Thread-4 (]: SQL status: COMMIT in 0.0 seconds
+[0m13:09:38.162724 [debug] [Thread-4 (]: Applying DROP to: "myapp"."public"."user_post_summary__dbt_backup"
+[0m13:09:38.167474 [debug] [Thread-4 (]: Using postgres connection "model.postgres_analytics.user_post_summary"
+[0m13:09:38.168450 [debug] [Thread-4 (]: On model.postgres_analytics.user_post_summary: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "default", "target_name": "dev", "node_id": "model.postgres_analytics.user_post_summary"} */
+drop table if exists "myapp"."public"."user_post_summary__dbt_backup" cascade
+[0m13:09:38.175688 [debug] [Thread-4 (]: SQL status: DROP TABLE in 0.0 seconds
+[0m13:09:38.182677 [debug] [Thread-4 (]: Timing info for model.postgres_analytics.user_post_summary (execute): 13:09:38.047792 => 13:09:38.182310
+[0m13:09:38.248415 [debug] [Thread-4 (]: On model.postgres_analytics.user_post_summary: Close
+[0m13:09:38.259159 [debug] [Thread-4 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '4ca5cf43-632b-4054-9055-a5d92cff9631', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dda38980550>]}
+[0m13:09:38.286876 [info ] [Thread-4 (]: 3 of 3 OK created sql table model public.user_post_summary ..................... [[32mSELECT 2[0m in 0.24s]
+[0m13:09:38.291071 [debug] [Thread-4 (]: Finished running node model.postgres_analytics.user_post_summary
+[0m13:09:38.296142 [debug] [MainThread]: Using postgres connection "master"
+[0m13:09:38.297727 [debug] [MainThread]: On master: BEGIN
+[0m13:09:38.299104 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m13:09:38.321663 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m13:09:38.323326 [debug] [MainThread]: On master: COMMIT
+[0m13:09:38.324562 [debug] [MainThread]: Using postgres connection "master"
+[0m13:09:38.325665 [debug] [MainThread]: On master: COMMIT
+[0m13:09:38.326988 [debug] [MainThread]: SQL status: COMMIT in 0.0 seconds
+[0m13:09:38.328126 [debug] [MainThread]: On master: Close
+[0m13:09:38.329768 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m13:09:38.330948 [debug] [MainThread]: Connection 'model.postgres_analytics.stg_posts' was properly closed.
+[0m13:09:38.333142 [debug] [MainThread]: Connection 'model.postgres_analytics.stg_users' was properly closed.
+[0m13:09:38.334674 [debug] [MainThread]: Connection 'model.postgres_analytics.user_post_summary' was properly closed.
+[0m13:09:38.336149 [info ] [MainThread]: 
+[0m13:09:38.338230 [info ] [MainThread]: Finished running 2 view models, 1 table model in 0 hours 0 minutes and 0.82 seconds (0.82s).
+[0m13:09:38.342499 [debug] [MainThread]: Command end result
+[0m13:09:38.371607 [info ] [MainThread]: 
+[0m13:09:38.375115 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m13:09:38.379151 [info ] [MainThread]: 
+[0m13:09:38.381654 [info ] [MainThread]: Done. PASS=3 WARN=0 ERROR=0 SKIP=0 TOTAL=3
+[0m13:09:38.384404 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dda3a991650>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dda3a663490>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dda3a3cbe90>]}
+[0m13:09:38.385683 [debug] [MainThread]: Flushing usage events

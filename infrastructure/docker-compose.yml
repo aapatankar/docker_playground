@@ -1,6 +1,8 @@
 services:
   mysql:
-    build: .
+    build: 
+      context: .
+      dockerfile: data_sources/Dockerfile
     container_name: mysql-container
     environment:
       - MYSQL_ROOT_PASSWORD=rootpassword
@@ -30,7 +32,7 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
       - ../postgres-logs:/var/log/postgresql
-      - ./init-postgres.sql:/docker-entrypoint-initdb.d/init-postgres.sql
+      - ./data_sinks/init-postgres.sql:/docker-entrypoint-initdb.d/init-postgres.sql
     restart: unless-stopped
     networks:
       - database-network
@@ -38,11 +40,11 @@ services:
   dbt:
     build:
       context: .
-      dockerfile: Dockerfile.dbt
+      dockerfile: dbt/Dockerfile.dbt
     container_name: dbt-container
     volumes:
-      - ../dbt_project:/dbt/project
-      - ../dbt_project/profiles.yml:/dbt/profiles/profiles.yml
+      - ../data_transformations:/dbt/project
+      - ../data_transformations/profiles.yml:/dbt/profiles/profiles.yml
       - dbt_target:/dbt/project/target
     working_dir: /dbt/project
     environment:
