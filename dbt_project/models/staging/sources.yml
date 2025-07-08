@@ -1,0 +1,44 @@
+version: 2
+
+sources:
+  - name: public
+    description: Public schema tables from PostgreSQL
+    tables:
+      - name: users
+        description: User information table
+        columns:
+          - name: id
+            description: Primary key for users
+            tests:
+              - unique
+              - not_null
+          - name: username
+            description: User's unique username
+            tests:
+              - unique
+              - not_null
+          - name: email
+            description: User's email address
+            tests:
+              - unique
+              - not_null
+
+      - name: posts
+        description: Blog posts table
+        columns:
+          - name: id
+            description: Primary key for posts
+            tests:
+              - unique
+              - not_null
+          - name: user_id
+            description: Foreign key to users table
+            tests:
+              - not_null
+              - relationships:
+                  to: source('public', 'users')
+                  field: id
+          - name: title
+            description: Post title
+            tests:
+              - not_null

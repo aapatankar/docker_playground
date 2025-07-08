@@ -35,9 +35,28 @@ services:
     networks:
       - database-network
 
+  dbt:
+    build:
+      context: .
+      dockerfile: Dockerfile.dbt
+    container_name: dbt-container
+    volumes:
+      - ../dbt_project:/dbt/project
+      - ../dbt_project/profiles.yml:/dbt/profiles/profiles.yml
+      - dbt_target:/dbt/project/target
+    working_dir: /dbt/project
+    environment:
+      - DBT_PROFILES_DIR=/dbt/profiles
+    networks:
+      - database-network
+    depends_on:
+      - postgres
+    command: tail -f /dev/null  # Keep container running
+
 volumes:
   mysql_data:
   postgres_data:
+  dbt_target:
 
 networks:
   database-network:

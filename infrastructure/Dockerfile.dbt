@@ -1,0 +1,34 @@
+# Dockerfile for dbt with PostgreSQL adapter
+FROM python:3.11-slim
+
+# Set working directory
+WORKDIR /dbt
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    git \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install dbt with PostgreSQL adapter
+RUN pip install --no-cache-dir \
+    dbt-postgres==1.7.4 \
+    dbt-core==1.7.4
+
+# Create dbt user and set ownership
+RUN useradd -m -s /bin/bash dbtuser && \
+    chown -R dbtuser:dbtuser /dbt
+
+# Switch to dbt user
+USER dbtuser
+
+# Set dbt profiles directory
+ENV DBT_PROFILES_DIR=/dbt/profiles
+
+# Create profiles directory
+RUN mkdir -p /dbt/profiles
+
+# Copy dbt project files (if they exist)
+COPY --chown=dbtuser:dbtuser . /dbt/
+
+# Default command
+CMD ["bash"]

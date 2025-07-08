@@ -1,0 +1,27 @@
+default:
+  outputs:
+    dev:
+      type: postgres
+      host: postgres-container
+      user: appuser
+      password: apppassword
+      port: 5432
+      dbname: myapp
+      schema: public
+      threads: 4
+      keepalives_idle: 0
+      search_path: "public"
+    
+    prod:
+      type: postgres
+      host: postgres-container
+      user: appuser
+      password: apppassword
+      port: 5432
+      dbname: myapp
+      schema: analytics
+      threads: 4
+      keepalives_idle: 0
+      search_path: "public,analytics"
+  
+  target: dev

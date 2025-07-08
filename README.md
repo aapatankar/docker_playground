@@ -8,10 +8,11 @@ This Docker setup provides both MySQL and PostgreSQL databases running in separa
 
 - **MySQL Container**: Ubuntu 22.04 with MySQL (port 3307)
 - **PostgreSQL Container**: PostgreSQL 15 (port 5433)
+- **dbt Container**: dbt Core with PostgreSQL adapter for data transformation
 - **Pre-configured**: Ready-to-use database instances with default databases and users
 - **Persistent Storage**: Data persists between container restarts for both databases
-- **Sample Data**: PostgreSQL includes sample tables with test data
-- **Network Isolation**: Both databases run on a shared Docker network
+- **Sample Data**: PostgreSQL includes sample tables with test data and dbt models
+- **Network Isolation**: All services run on a shared Docker network
 
 ## Database Configuration
 
@@ -29,6 +30,13 @@ This Docker setup provides both MySQL and PostgreSQL databases running in separa
 - **User Password**: `apppassword`
 - **Sample Tables**: `users`, `posts` with test data
 
+### dbt (Data Build Tool)
+- **Container**: `dbt-container` 
+- **dbt Version**: 1.7.4 with PostgreSQL adapter
+- **Connected to**: PostgreSQL database
+- **Project**: Includes staging models (`stg_users`, `stg_posts`) and marts (`user_post_summary`)
+- **Profile**: Pre-configured to connect to PostgreSQL
+
 ## Quick Start
 
 ### Using Docker Compose (Recommended)
@@ -37,7 +45,7 @@ This Docker setup provides both MySQL and PostgreSQL databases running in separa
 # Navigate to infrastructure directory
 cd infrastructure
 
-# Build and start both containers
+# Build and start all containers (MySQL, PostgreSQL, and dbt)
 docker-compose up -d
 
 # View logs for all services
@@ -46,6 +54,7 @@ docker-compose logs -f
 # View logs for specific service
 docker-compose logs -f mysql
 docker-compose logs -f postgres
+docker-compose logs -f dbt
 
 # Stop all containers
 docker-compose down
@@ -94,6 +103,29 @@ docker rm mysql-container
 ```
 
 ## Connecting to Databases
+
+### dbt (Data Build Tool)
+
+#### Run dbt Commands
+```bash
+# Test dbt connection to PostgreSQL
+docker exec -it dbt-container dbt debug
+
+# Run all dbt models
+docker exec -it dbt-container dbt run
+
+# Run dbt tests
+docker exec -it dbt-container dbt test
+
+# Interactive dbt shell
+docker exec -it dbt-container bash
+```
+
+#### dbt Project Structure
+- **Staging Models**: `stg_users`, `stg_posts` (materialized as views)
+- **Marts Models**: `user_post_summary` (materialized as table)
+- **Sources**: Configured to reference PostgreSQL `users` and `posts` tables
+- **Tests**: Data quality tests for uniqueness, null checks, and referential integrity
 
 ### MySQL Connection
 
@@ -144,6 +176,13 @@ SELECT * FROM users;
 SELECT p.title, p.content, u.username 
 FROM posts p 
 JOIN users u ON p.user_id = u.id;
+
+-- Query dbt staging models
+SELECT * FROM stg_users;
+SELECT * FROM stg_posts;
+
+-- Query dbt marts model
+SELECT * FROM user_post_summary;
 ```
 
 ## GUI Database Tools
@@ -242,11 +281,20 @@ Get-NetTCPConnection | Where-Object {$_.LocalPort -eq 3307 -or $_.LocalPort -eq 
 ```
 docker_playground/
 ├── infrastructure/                 # All infrastructure files
-│   ├── docker-compose.yml         # Multi-database container orchestration
+│   ├── docker-compose.yml         # Multi-service container orchestration
 │   ├── Dockerfile                 # MySQL container configuration
+│   ├── Dockerfile.dbt             # dbt container configuration
 │   ├── init-postgres.sql          # PostgreSQL initialization script
 │   ├── DBEAVER_CONNECTION.md      # MySQL DBeaver setup guide
-│   └── POSTGRES_CONNECTION.md     # PostgreSQL connection guide
+│   ├── POSTGRES_CONNECTION.md     # PostgreSQL connection guide
+│   └── DBT_SETUP.md              # dbt setup and usage guide
+├── dbt_project/                   # dbt project directory (standalone)
+│   ├── dbt_project.yml           # dbt project configuration
+│   ├── profiles.yml              # dbt connection profiles
+│   ├── models/                   # dbt models
+│   │   ├── staging/              # Staging models and sources
+│   │   └── marts/                # Business logic models
+│   └── target/                   # dbt compilation outputs
 ├── mysql-logs/                    # MySQL log files (created at runtime)
 ├── postgres-logs/                 # PostgreSQL log files (created at runtime)
 ├── README.md                      # This file
@@ -260,6 +308,8 @@ This multi-database setup supports various development scenarios:
 
 - **Database Migration Testing**: Test applications moving from MySQL to PostgreSQL or vice versa
 - **Multi-Database Applications**: Applications that need to work with both database types
+- **Data Transformation**: Use dbt to build data models, transformations, and analytics
 - **Learning and Comparison**: Learn differences between MySQL and PostgreSQL
 - **Microservices**: Different services using different database technologies
+- **Data Pipeline Development**: Build and test data pipelines with dbt
 - **Data Synchronization**: Test data sync between different database systems
