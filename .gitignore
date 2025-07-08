@@ -1,0 +1,21 @@
+# Ignore MySQL logs directory contents but keep the directory
+mysql-logs/*
+!mysql-logs/.gitkeep
+
+# Ignore Docker volumes and build cache
+.docker/
+
+# Ignore environment files with sensitive data
+.env
+.env.local
+.env.production
+
+# Ignore OS specific files
+.DS_Store
+Thumbs.db
+
+# Ignore IDE files
+.vscode/
+.idea/
+*.swp
+*.swo

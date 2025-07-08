@@ -1,0 +1,24 @@
+services:
+  mysql:
+    build: .
+    container_name: mysql-container
+    environment:
+      - MYSQL_ROOT_PASSWORD=rootpassword
+      - MYSQL_DATABASE=myapp
+      - MYSQL_USER=appuser
+      - MYSQL_PASSWORD=apppassword
+    ports:
+      - "3307:3307"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./mysql-logs:/var/log/mysql
+    restart: unless-stopped
+    networks:
+      - mysql-network
+
+volumes:
+  mysql_data:
+
+networks:
+  mysql-network:
+    driver: bridge

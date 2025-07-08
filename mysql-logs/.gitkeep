@@ -1,0 +1,2 @@
+# This file ensures the mysql-logs directory is tracked by Git
+# MySQL logs will be written to this directory when the container runs
