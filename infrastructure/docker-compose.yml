@@ -11,7 +11,7 @@ services:
       - "3307:3307"
     volumes:
       - mysql_data:/var/lib/mysql
-      - ./mysql-logs:/var/log/mysql
+      - ../mysql-logs:/var/log/mysql
     restart: unless-stopped
     networks:
       - database-network
@@ -29,7 +29,7 @@ services:
       - "5433:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
-      - ./postgres-logs:/var/log/postgresql
+      - ../postgres-logs:/var/log/postgresql
       - ./init-postgres.sql:/docker-entrypoint-initdb.d/init-postgres.sql
     restart: unless-stopped
     networks:
