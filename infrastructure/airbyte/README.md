@@ -194,6 +194,50 @@ When setting up sources and destinations in Airbyte:
    - Verify your database containers are running
    - Check network connectivity
 
+### Stuck Sync Jobs
+
+If your Airbyte syncs appear stuck (showing "Running" but not progressing):
+
+4. **Resource constraints (CPU/Memory)**:
+   ```bash
+   # Check for pending jobs due to insufficient resources
+   kubectl get pods -n airbyte-abctl --kubeconfig="C:\Users\apatankar\.airbyte\abctl\abctl.kubeconfig" --context=kind-airbyte-abctl
+   
+   # Look for pods in "Pending" status
+   # Check specific pod for resource issues
+   kubectl describe pod <pod-name> -n airbyte-abctl --kubeconfig="C:\Users\apatankar\.airbyte\abctl\abctl.kubeconfig" --context=kind-airbyte-abctl
+   ```
+
+5. **Delete stuck replication jobs**:
+   ```bash
+   # Find stuck replication jobs
+   kubectl get pods -n airbyte-abctl --kubeconfig="C:\Users\apatankar\.airbyte\abctl\abctl.kubeconfig" --context=kind-airbyte-abctl | findstr replication
+   
+   # Delete stuck job (replace with actual pod name)
+   kubectl delete pod replication-job-X-attempt-Y -n airbyte-abctl --kubeconfig="C:\Users\apatankar\.airbyte\abctl\abctl.kubeconfig" --context=kind-airbyte-abctl
+   ```
+
+6. **Restart Airbyte cluster for resource refresh**:
+   ```bash
+   # Restart the kind cluster container
+   docker restart airbyte-abctl-control-plane
+   
+   # Wait 30-60 seconds and check status
+   abctl local status
+   ```
+
+7. **Increase Docker Desktop resources**:
+   - Open Docker Desktop → Settings → Resources
+   - Increase CPU cores to 6+ and Memory to 8GB+
+   - Apply changes and restart Docker Desktop
+   - Restart Airbyte: `abctl local uninstall && abctl local install`
+
+8. **Optimize sync configuration**:
+   - In Airbyte web UI, reduce sync frequency (e.g., daily instead of hourly)
+   - Enable incremental sync instead of full refresh
+   - Limit number of tables/streams being synced
+   - Use smaller batch sizes
+
 ### Logs and Debugging
 
 ```bash
